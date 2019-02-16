@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BurakKUTBAY.com Spring Örnek Uygulama</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"/>
+    <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+        Kullanıcı Adı veya Şifre yanlış.
+    </div>
+    <form th:action="@{/login}" method="post">
+        <h1 class="h3 mb-3 font-weight-normal">Giriş Yap</h1>
+
+        <label>Kullanıcı Adınız</label>
+        <input type="text" name="username" class="form-control"/>
+
+        <label>Şifreniz</label>
+        <input type="password" id="password" name="password" class="form-control"/>
+
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Giriş Yap</button>
+
+        <br/>
+        <div class="margin-top20 text-center"><a th:href="@{/register}">Üye Olma Sayfasına Git</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

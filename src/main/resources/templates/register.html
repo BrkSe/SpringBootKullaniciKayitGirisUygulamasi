@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BurakKUTBAY.com Spring Örnek Uygulama</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"/>
+    <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="h3 mb-3 font-weight-normal">Üye Kaydı</h1>
+
+    <form autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post">
+
+        <label>Adnız </label>
+        <input type="text" id="firstName" placeholder="First Name" th:field="*{firstName}" class="form-control"/><br/>
+
+        <label>Soyadınız</label>
+        <input type="text" id="lastName" placeholder="Last Name" th:field="*{lastName}" class="form-control"/><br/>
+
+
+        <label>Eposta</label>
+        <input type="text" id="email" placeholder=" Email" th:field="*{email}" class="form-control"/><br/>
+
+        <label>Kullanıcı Adınız</label>
+        <input type="text" id="username" placeholder=" Username" th:field="*{username}" class="form-control"/><br/>
+
+
+        <label>Parolanız </label>
+        <input type="text" id="password" placeholder=" Password" th:field="*{password}" class="form-control"/><br/>
+
+        <button type="submit" class="btn btn-success text-center form-control">Kaydet</button>
+
+
+    </form>
+    <div class="margin-top20 text-center"><a th:href="@{/login}">Giriş Sayfasına Git</a></div>
+</div>
+</body>
+</html>
